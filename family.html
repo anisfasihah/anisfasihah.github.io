@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family - Anis Fasihah</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+            background: white;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            background: url('1.jpg') no-repeat center center/cover;
+        }
+
+        /* Navigation Bar */
+        .nav-button {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            background: #007BFF;
+            color: white;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .nav-button:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .nav-popup {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            height: 100%;
+            width: 300px;
+            background: linear-gradient(to bottom, #007BFF, #0056b3);
+            color: white;
+            padding: 30px;
+            transition: right 0.3s ease-in-out;
+            z-index: 3;
+            box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px 0 0 10px;
+        }
+
+        .nav-popup.active {
+            right: 0;
+        }
+
+        .nav-popup h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .nav-popup ul {
+            list-style: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .nav-popup ul li {
+            margin: 25px 0;
+        }
+
+        .nav-popup ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            padding: 12px 25px;
+            border: 2px solid white;
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+            display: inline-block;
+        }
+
+        .nav-popup ul li a:hover {
+            background-color: white;
+            color: #007BFF;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 2;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Content Styling */
+        .biodata-container {
+            max-width: 800px;
+            margin: 30px auto;
+            color: #333;
+        }
+
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+            font-size: 32px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        section {
+            margin: 20px 0;
+            padding: 20px 0;
+            border-top: 2px solid #007BFF;
+        }
+
+        section h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: #007BFF;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        section p, section ul {
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+        }
+
+        section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        section ul li {
+            margin: 10px 0;
+        }
+
+        audio, img {
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0056b3;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            color: white;
+            border-top: 4px solid #003f7f;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Popup -->
+    <button class="nav-button" onclick="toggleNav()">Menu</button>
+    <div class="overlay" onclick="toggleNav()"></div>
+    <div class="nav-popup" id="navPopup">
+        <h3>Navigation</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experience.html">Academics & Experience</a></li>
+            <li><a href="biodata.html">Personal Information</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+        </ul>
+    </div>
+
+    <!-- Family Page Content -->
+    <div class="biodata-container">
+        <header>
+            <h1>Family</h1>
+            <p>Anis Fasihah Binti Md Suhaimin</p>
+        </header>
+
+        <section class="family-details">
+            <h2>Family Members</h2>
+            <p><strong>Parents:</strong></p>
+            <ul>
+                <li><strong>Father:</strong> Md Suhaimin Bin Othman</li>
+                <li><strong>Mother:</strong> Hamiza Robi Bt Salleh</li>
+            </ul>
+            <p><strong>Siblings:</strong> 5</p>
+            <p><strong>Names of Siblings:</strong></p>
+            <ul>
+                <li>Ahmad Iqbal Bin Md Suhaimin (Abang)</li>
+                <li>Anis Fasihah Binti Md Suhaimin</li>
+                <li>Ainun Faqihah Binti Md Suhaimin</li>
+                <li>Amni Madihah Binti Md Suhaimin</li>
+                <li>Ammar Rifqi Bin Md Suhaimin</li>
+            </ul>
+        </section>
+
+        <audio id="familyAudio" controls>
+            <source src="ibu.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <img src="10.jpeg" alt="Family Photo">
+        <footer>
+            <p>&copy; 2024 Anis Fasihah Binti Md Suhaimin. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript for Navigation Popup -->
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('navPopup');
+            const overlay = document.querySelector('.overlay');
+            nav.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
